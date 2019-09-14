@@ -33,7 +33,7 @@ import static org.mockito.Mockito.*;
 //@AutoConfigureTestDatabase
 public class ProductResourceTest {
 
-    Product mockProduct = new Product(9999l, "Gramepador", "Grapeia até 20 folhas", 19.90d);
+    Product mockProduct = new Product(9999l, "Gramepador", "Grapeia até 20 folhas", 19.90d,null);
 
     @Autowired
     private ObjectMapper objectMapper;
