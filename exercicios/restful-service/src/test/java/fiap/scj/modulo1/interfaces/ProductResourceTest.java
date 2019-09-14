@@ -1,9 +1,18 @@
 package fiap.scj.modulo1.interfaces;
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import fiap.scj.modulo1.application.ProductService;
-import fiap.scj.modulo1.domain.Product;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,10 +30,11 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import java.util.Arrays;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+import fiap.scj.modulo1.application.ProductService;
+import fiap.scj.modulo1.domain.Product;
+import fiap.scj.modulo1.domain.ProductDetails;
 
 
 @RunWith(SpringRunner.class)
@@ -33,8 +43,14 @@ import static org.mockito.Mockito.*;
 //@AutoConfigureTestDatabase
 public class ProductResourceTest {
 
-    Product mockProduct = new Product(9999l, "Gramepador", "Grapeia até 20 folhas", 19.90d,null);
-
+    List<ProductDetails> listProductDetails = new ArrayList<>();
+	
+	Product mockProduct = new Product(9999l, "Gramepador", "Grapeia até 20 folhas", 19.90d, listProductDetails);
+	
+	ProductDetails productDetails1 = new ProductDetails(9998l, "chave1", "Descricao xxxxx", mockProduct);
+	
+	listProductDetails.add(productDetails1);
+	
     @Autowired
     private ObjectMapper objectMapper;
     @Autowired

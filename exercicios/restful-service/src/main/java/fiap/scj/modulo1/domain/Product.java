@@ -1,12 +1,18 @@
 package fiap.scj.modulo1.domain;
 
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import java.io.Serializable;
-import java.util.List;
 
 @Data
 @Entity
@@ -22,6 +28,6 @@ public class Product implements Serializable {
     private String description;
     private Double price;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "produtc", orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany
     private List<ProductDetails> productDetails;
 }
