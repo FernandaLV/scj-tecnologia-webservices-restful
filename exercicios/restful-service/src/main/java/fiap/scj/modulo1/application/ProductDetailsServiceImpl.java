@@ -47,7 +47,7 @@ public class ProductDetailsServiceImpl implements ProductDetailsService {
                 result.addAll(repository.findAll());
             } else {
                 log.debug("Finding products by name or description");
-                result.addAll(repository.findByNameOrDescriptionAllIgnoreCase(keyword, keyword));
+                result.addAll(repository.findByKeyOrDescriptionAllIgnoreCase(keyword, keyword));
             }
 
             return result;

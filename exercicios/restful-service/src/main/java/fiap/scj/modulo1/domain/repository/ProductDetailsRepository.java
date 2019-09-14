@@ -9,5 +9,5 @@ import fiap.scj.modulo1.domain.ProductDetails;
 
 @Repository
 public interface ProductDetailsRepository extends JpaRepository<ProductDetails, Long> {
-	 List<ProductDetails> findByNameOrDescriptionAllIgnoreCase(String key, String description);
+	 List<ProductDetails> findByKeyOrDescriptionAllIgnoreCase(String key, String description);
 }

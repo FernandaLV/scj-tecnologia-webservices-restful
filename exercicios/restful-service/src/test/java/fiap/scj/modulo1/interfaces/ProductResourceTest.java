@@ -43,13 +43,13 @@ import fiap.scj.modulo1.domain.ProductDetails;
 //@AutoConfigureTestDatabase
 public class ProductResourceTest {
 
-    List<ProductDetails> listProductDetails = new ArrayList<>();
+    //List<ProductDetails> listProductDetails = new ArrayList<>();
 	
-	Product mockProduct = new Product(9999l, "Gramepador", "Grapeia até 20 folhas", 19.90d, listProductDetails);
+	Product mockProduct = new Product(9999l, "Gramepador", "Grapeia até 20 folhas", 19.90d, null);
 	
-	ProductDetails productDetails1 = new ProductDetails(9998l, "chave1", "Descricao xxxxx", mockProduct);
+	//ProductDetails productDetails1 = new ProductDetails(9998l, "chave1", "Descricao xxxxx", mockProduct);
 	
-	listProductDetails.add(productDetails1);
+	//listProductDetails.add(productDetails1);
 	
     @Autowired
     private ObjectMapper objectMapper;
